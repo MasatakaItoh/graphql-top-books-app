@@ -1,0 +1,15 @@
+overwrite: true
+generates:
+  ./src/types/generated/graphql.ts:
+    schema: graphql/schema.gql
+    config:
+      strictScalars: true
+      useIndexSignature: true
+      # GraphQLのスカラー型をTypeScriptの型に変換する
+      scalars:
+        DateTime: Date
+      # リゾルバーのためのContextの型をsrc/types/context.d.tsから読み込む
+      contextType: ../context#Context
+    plugins:
+      - typescript
+      - typescript-resolvers
