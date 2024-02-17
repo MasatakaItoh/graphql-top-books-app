@@ -10,6 +10,7 @@
     "codegen": "graphql-codegen --config graphql/codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.5",
     "@apollo/server": "^4.10.0",
     "@as-integrations/next": "^3.0.0",
     "@graphql-tools/graphql-file-loader": "^8.0.0",
