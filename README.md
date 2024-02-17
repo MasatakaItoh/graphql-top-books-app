@@ -8,6 +8,9 @@
 npm run dev
 ```
 
+run the development server at [http://localhost:3000](http://localhost:3000)  
+run the GraphQL Playground at [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)
+
 ## Prisma
 
 ### DB Migration

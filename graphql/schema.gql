@@ -21,14 +21,14 @@ type Author {
 }
 
 type Query {
-    novel(id: ID!): Novel
-    novels: [Novel]
+    novel(id: ID!): Novel!
+    novels: [Novel!]!
 }
 
 type Mutation {
-    addNovel(data: NovelInput!): Novel
-    updateNovel(id: ID!, data: NovelInput!): Novel
-    deleteNovel(id: ID!): Novel
-    addAuthor(novelId: ID!, name: String!): Author
-    deleteAuthor(id: ID!): Author
+    addNovel(data: NovelInput!): Novel!
+    updateNovel(id: ID!, data: NovelInput!): Novel!
+    deleteNovel(id: ID!): Novel!
+    addAuthor(novelId: ID!, name: String!): Author!
+    deleteAuthor(id: ID!): Author!
 }

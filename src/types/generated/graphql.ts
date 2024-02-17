@@ -27,11 +27,11 @@ export type Author = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addAuthor?: Maybe<Author>;
-  addNovel?: Maybe<Novel>;
-  deleteAuthor?: Maybe<Author>;
-  deleteNovel?: Maybe<Novel>;
-  updateNovel?: Maybe<Novel>;
+  addAuthor: Author;
+  addNovel: Novel;
+  deleteAuthor: Author;
+  deleteNovel: Novel;
+  updateNovel: Novel;
 };
 
 
@@ -78,8 +78,8 @@ export type NovelInput = {
 
 export type Query = {
   __typename?: 'Query';
-  novel?: Maybe<Novel>;
-  novels?: Maybe<Array<Maybe<Novel>>>;
+  novel: Novel;
+  novels: Array<Novel>;
 };
 
 
@@ -195,11 +195,11 @@ export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversT
 }
 
 export type MutationResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = ResolversObject<{
-  addAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationAddAuthorArgs, 'name' | 'novelId'>>;
-  addNovel?: Resolver<Maybe<ResolversTypes['Novel']>, ParentType, ContextType, RequireFields<MutationAddNovelArgs, 'data'>>;
-  deleteAuthor?: Resolver<Maybe<ResolversTypes['Author']>, ParentType, ContextType, RequireFields<MutationDeleteAuthorArgs, 'id'>>;
-  deleteNovel?: Resolver<Maybe<ResolversTypes['Novel']>, ParentType, ContextType, RequireFields<MutationDeleteNovelArgs, 'id'>>;
-  updateNovel?: Resolver<Maybe<ResolversTypes['Novel']>, ParentType, ContextType, RequireFields<MutationUpdateNovelArgs, 'data' | 'id'>>;
+  addAuthor?: Resolver<ResolversTypes['Author'], ParentType, ContextType, RequireFields<MutationAddAuthorArgs, 'name' | 'novelId'>>;
+  addNovel?: Resolver<ResolversTypes['Novel'], ParentType, ContextType, RequireFields<MutationAddNovelArgs, 'data'>>;
+  deleteAuthor?: Resolver<ResolversTypes['Author'], ParentType, ContextType, RequireFields<MutationDeleteAuthorArgs, 'id'>>;
+  deleteNovel?: Resolver<ResolversTypes['Novel'], ParentType, ContextType, RequireFields<MutationDeleteNovelArgs, 'id'>>;
+  updateNovel?: Resolver<ResolversTypes['Novel'], ParentType, ContextType, RequireFields<MutationUpdateNovelArgs, 'data' | 'id'>>;
 }>;
 
 export type NovelResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Novel'] = ResolversParentTypes['Novel']> = ResolversObject<{
@@ -213,8 +213,8 @@ export type NovelResolvers<ContextType = Context, ParentType extends ResolversPa
 }>;
 
 export type QueryResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
-  novel?: Resolver<Maybe<ResolversTypes['Novel']>, ParentType, ContextType, RequireFields<QueryNovelArgs, 'id'>>;
-  novels?: Resolver<Maybe<Array<Maybe<ResolversTypes['Novel']>>>, ParentType, ContextType>;
+  novel?: Resolver<ResolversTypes['Novel'], ParentType, ContextType, RequireFields<QueryNovelArgs, 'id'>>;
+  novels?: Resolver<Array<ResolversTypes['Novel']>, ParentType, ContextType>;
 }>;
 
 export type Resolvers<ContextType = Context> = ResolversObject<{
