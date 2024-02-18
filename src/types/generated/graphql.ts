@@ -63,7 +63,7 @@ export type MutationUpdateNovelArgs = {
 
 export type Novel = {
   __typename?: 'Novel';
-  authors?: Maybe<Array<Maybe<Author>>>;
+  authors?: Maybe<Array<Author>>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   id: Scalars['ID']['output'];
   image?: Maybe<Scalars['String']['output']>;
@@ -203,7 +203,7 @@ export type MutationResolvers<ContextType = Context, ParentType extends Resolver
 }>;
 
 export type NovelResolvers<ContextType = Context, ParentType extends ResolversParentTypes['Novel'] = ResolversParentTypes['Novel']> = ResolversObject<{
-  authors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Author']>>>, ParentType, ContextType>;
+  authors?: Resolver<Maybe<Array<ResolversTypes['Author']>>, ParentType, ContextType>;
   createdAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;

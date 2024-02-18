@@ -36,7 +36,9 @@ export const resolvers: Resolvers = {
       return context.prisma.novel.delete({ where: { id: args.id } });
     },
     addAuthor: async (parent, args, context) => {
-      return context.prisma.author.create({ data: { name: args.name } });
+      return context.prisma.author.create({
+        data: { novelId: args.novelId, name: args.name },
+      });
     },
     deleteAuthor: async (parent, args, context) => {
       return context.prisma.author.delete({ where: { id: args.id } });

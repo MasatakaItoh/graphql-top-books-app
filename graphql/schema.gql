@@ -11,7 +11,7 @@ type Novel {
     image: String
     createdAt: DateTime
     updatedAt: DateTime
-    authors: [Author]
+    authors: [Author!]
 }
 
 type Author {
